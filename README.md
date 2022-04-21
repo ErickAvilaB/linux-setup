@@ -365,3 +365,56 @@ $ sudo apt-get install silversearcher-ag
 
 - Copilot  
 Run `:Copilot setup`, login on GitHub and paste the code.
+***
+
+## Customization
+### Themes
+For install themes first we need to create two folders in /home/<user>/ directory, the first will be called **.icons** and the second **.themes**
+~~~
+$ cd
+$ mkdir .icons
+$ mkdir .themes
+~~~
+
+#### Icon theme
+
+Go to this [site](https://www.xfce-look.org/p/1166289/) and download the theme called **papirus-icon-theme-cyan-folders.tarxz**. Then run the commands:
+~~~
+$ sudo mv Downloads/<package name> ~/.icons
+$ cd .icons
+$ tar -xvf <package name>
+$ gtk-update-icon-cache /home/<user>/.icons/Papirus-Dark
+$ sudo rm <package name>
+~~~
+
+Now Settings > Appearance > Icons; and select **Pairus-Dark**
+![Config](./assets/4.png)
+
+### Windows theme
+Go to this [site](https://www.xfce-look.org/p/1214931/) and download the theme called **01-Flat-Remix-GTK-Blue_20220413**. Then run the commands:
+~~~
+$ sudo mv Downloads/<package name> ~/.themes
+$ cd .themes
+$ tar -xvf <package name>
+$ sudo rm <package name>
+~~~
+
+Settings > Appearance > Style; and select **Flat-Remix-GTK-Dark**
+Settings > Appearance > window manager; and select **Flat-Remix-GTK-Dark**
+
+1
+![Style](./assets/5.png)
+
+2
+![Window](./assets/6.png)
+
+### Change font
+[Download font](https://www.dafontfree.io/download/san-francisco-text/?wpdmdl=64309&refresh=62615668b4aad1650546280&ind=1601919915418&filename=1601919916wpdm_San-Francisco.zip)
+~~~
+$ unzip San-Francisco.zip
+$ cd San Francisco/SFUIDisplay/
+$ sudo mv . /usr/share/fonts
+~~~
+
+## Wallpaper
+![Wallpaper](./assets/7.jpg)
