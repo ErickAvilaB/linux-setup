@@ -416,5 +416,53 @@ $ cd San Francisco/SFUIDisplay/
 $ sudo mv . /usr/share/fonts
 ~~~
 
-## Wallpaper
+## Desktop
 ![Wallpaper](./assets/7.jpg)
+![Config](./assets/8.png)
+
+Disable desktop icons. Settings > Desktop > Icons > Appearance > Icon type: None  
+Create **workspace** folder into ~/
+
+## Panel
+![Config](./assets/9.png)
+![Config](./assets/10.png)
+![Config](./assets/11.png)
+![Config](./assets/12.png)
+![Panel button](./assets/13.png)
+
+## Plank
+~~~
+$ sudo apt install plank
+~~~
+Add to startup. Go to Settings > Session and Start Up > Applications > Add; fill whit plank.
+![Config](./assets/sas.png)
+![Config](./assets/14.png)
+![Config](./assets/15.png)
+
+## Ulauncher
+[Guide](https://ulauncher.io/#)
+~~~
+$ sudo add-apt-repository ppa:agornostal/ulauncher && sudo apt update && sudo apt install ulauncher
+~~~
+![Config](./assets/16.png)
+
+## Some extra things
+~~~
+# Install stacer
+$ sudo apt install stacer
+
+# Install flask
+$ pip install Flask
+
+# Install venv
+$ pip install virtualenv
+
+# Install live server
+$ npm install -g live-server
+
+# Install neofetch
+$ sudo apt install neofetch
+
+# Install htop
+$ sudo apt install htop
+~~~
