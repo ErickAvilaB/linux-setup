@@ -18,6 +18,10 @@ Author: Erick Avila | @ErickAvilaB on GitHub
 7. [Xfece terminal](#xfce-terminal)
 8. [Install tmux](#tmux)
 9. [Install NeoVim](#nvim)
+10. [Customization](#Customization)
+11. [Plank](#Plank)
+12. [Ulauncher](#Ulauncher)
+13. [Extra](#extra)
 ***
 
 <a name="distribution"></a>
@@ -367,6 +371,7 @@ $ sudo apt-get install silversearcher-ag
 Run `:Copilot setup`, login on GitHub and paste the code.
 ***
 
+<a name="Customization"></a>
 ## Customization
 ### Themes
 For install themes first we need to create two folders in /home/<user>/ directory, the first will be called **.icons** and the second **.themes**
@@ -416,7 +421,7 @@ $ cd San Francisco/SFUIDisplay/
 $ sudo mv . /usr/share/fonts
 ~~~
 
-## Desktop
+### Desktop
 ![Wallpaper](./assets/7.jpg)
 ![Config](./assets/8.png)
 
@@ -430,6 +435,7 @@ Create **workspace** folder into ~/
 ![Config](./assets/12.png)
 ![Panel button](./assets/13.png)
 
+<a name="Plank"></a>
 ## Plank
 ~~~
 $ sudo apt install plank
@@ -439,6 +445,7 @@ Add to startup. Go to Settings > Session and Start Up > Applications > Add; fill
 ![Config](./assets/14.png)
 ![Config](./assets/15.png)
 
+<a name="Ulauncher"></a>
 ## Ulauncher
 [Guide](https://ulauncher.io/#)
 ~~~
@@ -446,6 +453,7 @@ $ sudo add-apt-repository ppa:agornostal/ulauncher && sudo apt update && sudo ap
 ~~~
 ![Config](./assets/16.png)
 
+<a name="extra"></a>
 ## Some extra things
 ~~~
 # Install stacer
