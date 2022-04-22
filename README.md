@@ -1,4 +1,4 @@
-# Linux Setup
+# Linux Setup :
 Author: Erick Avila | @ErickAvilaB on GitHub
 ***
 
