@@ -474,3 +474,5 @@ $ sudo apt install neofetch
 # Install htop
 $ sudo apt install htop
 ~~~
+
+(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
