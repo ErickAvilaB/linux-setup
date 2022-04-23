@@ -401,7 +401,7 @@ Go to this [site](https://www.xfce-look.org/p/1214931/) and download the theme c
 $ sudo mv Downloads/<package name> ~/.themes
 $ cd .themes
 $ tar -xvf <package name>
-$ sudo rm <package name>
+$ sudo rm <package name .tar>
 ~~~
 
 Settings > Appearance > Style; and select **Flat-Remix-GTK-Dark**
@@ -427,6 +427,17 @@ $ sudo mv . /usr/share/fonts
 
 Disable desktop icons. Settings > Desktop > Icons > Appearance > Icon type: None  
 Create **workspace** folder into ~/
+
+### Cursor
+Go to this [site](https://www.gnome-look.org/p/1393084/) and download the theme called **Sweet-cursors.tarxz**. Then run the commands:
+~~~
+$ sudo mv Downloads/<package name> ~/.icons
+$ cd .icons
+$ tar -xvf <package name>
+$ sudo rm <package name .tar>
+~~~
+Settings > Mouse > Theme; and select **Sweet**  
+![Sweet cursor](./assets/17.png)
 
 ## Panel
 ![Config](./assets/9.png)
