@@ -396,7 +396,7 @@ Now Settings > Appearance > Icons; and select **Pairus-Dark**
 ![Config](./assets/4.png)
 
 ### Windows theme
-Go to this [site](https://www.xfce-look.org/p/1214931/) and download the theme called **01-Flat-Remix-GTK-Blue_20220413**. Then run the commands:
+Go to this [site](https://www.xfce-look.org/p/1253385) and download the theme called **Sweet-Dark.tarxz**. Then run the commands:
 ~~~
 $ sudo mv Downloads/<package name> ~/.themes
 $ cd .themes
@@ -404,8 +404,8 @@ $ tar -xvf <package name>
 $ sudo rm <package name .tar>
 ~~~
 
-Settings > Appearance > Style; and select **Flat-Remix-GTK-Dark**
-Settings > Appearance > window manager; and select **Flat-Remix-GTK-Dark**
+Settings > Appearance > Style; and select **Sweet-Dark**
+Settings > Appearance > window manager; and select **Sweet-Dark**
 
 1
 ![Style](./assets/5.png)
@@ -422,7 +422,7 @@ $ sudo mv . /usr/share/fonts
 ~~~
 
 ### Desktop
-![Wallpaper](./assets/7.jpg)
+![Wallpaper](./assets/casa.jpg)
 ![Config](./assets/8.png)
 
 Disable desktop icons. Settings > Desktop > Icons > Appearance > Icon type: None  
