@@ -50,6 +50,12 @@ $ timedatectl set-local-rtc 1 --adjust-system-clock
 ~~~
 ***
 
+### Create workspace folder
+~~~
+$ cd
+$ mkdir workspace
+~~~
+
 <a name="update"></a>
 ## Update and Upgrade
 Here we are going to update and upgrade. Just run the follow command:`$ sudo apt update && sudo apt upgrade`
@@ -189,8 +195,29 @@ TYPEWRITTEN_PROMPT_LAYOUT="pure"
 TYPEWRITTEN_COLOR_MAPPINGS="primary:#A1A7B4;secondary:#BB77D9;accent:#BB77D9;info_negative:#D96C80;info_positive:#98C379"
 ~~~
 
+### JSON tools
+[Guide](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jsontools)
+Download:
+~~~
+$ git clone https://github.com/ErickAvilaB/zsh-json.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-json
+~~~
+Add to .zshrc
+~~~
+plugins=(
+	jsontools
+)
+~~~
+
+### CFLASK
+Download:
+~~~
+$ git clone https://github.com/ErickAvilaB/cflask.git ~/workspace
+~~~
+Then create alias to main.sh(~/workspace/cflask/main.sh) on .zshrc
+
 <a name="zsh-config"></a>
 ### ZSH config
+[File](./assets/.zshrc)
 ~~~
 # Alias
 # NeoVim Aliases
@@ -381,7 +408,7 @@ $ mkdir .icons
 $ mkdir .themes
 ~~~
 
-#### Icon theme
+#### Icon theme Kora
 
 Go to this [site](https://www.xfce-look.org/p/1166289/) and download the theme called **papirus-icon-theme-cyan-folders.tarxz**. Then run the commands:
 ~~~
@@ -395,7 +422,7 @@ $ sudo rm <package name>
 Now Settings > Appearance > Icons; and select **Pairus-Dark**
 ![Config](./assets/4.png)
 
-### Windows theme
+### Windows theme Nordic
 Go to this [site](https://www.xfce-look.org/p/1253385) and download the theme called **Sweet-Dark.tarxz**. Then run the commands:
 ~~~
 $ sudo mv Downloads/<package name> ~/.themes
@@ -422,7 +449,7 @@ $ sudo mv . /usr/share/fonts
 ~~~
 
 ### Desktop
-![Wallpaper](./assets/casa.jpg)
+![Wallpaper](./assets/viaje-al-espacio_1920x1080_xtrafondos.com.jpg)
 ![Config](./assets/8.png)
 
 Disable desktop icons. Settings > Desktop > Icons > Appearance > Icon type: None  
@@ -484,6 +511,9 @@ $ sudo apt install neofetch
 
 # Install htop
 $ sudo apt install htop
+
+# Install markserv
+$ npm i -g markserv
 ~~~
 
 (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
