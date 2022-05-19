@@ -502,6 +502,7 @@ $ pip install Flask
 
 # Install venv
 $ pip install virtualenv
+$ sudo apt install python3.8-venv
 
 # Install live server
 $ npm install -g live-server
