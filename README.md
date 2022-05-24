@@ -396,6 +396,12 @@ $ sudo apt-get install silversearcher-ag
 
 - Copilot  
 Run `:Copilot setup`, login on GitHub and paste the code.
+
+- Prettier
+~~~
+$ cd .config/nvim/plugged/vim-prettier
+$ npm install
+~~~
 ***
 
 <a name="Customization"></a>
@@ -406,12 +412,6 @@ For install themes first we need to create two folders in /home/<user>/ director
 $ cd
 $ mkdir .icons
 $ mkdir .themes
-~~~
-
-- Prettier
-~~~
-$ cd .config/nvim/plugged/vim-prettier
-$ npm install
 ~~~
 
 #### Icon theme Kora
