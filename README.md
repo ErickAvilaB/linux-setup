@@ -371,7 +371,7 @@ $ mkdir plugged
 After open plugins.vim and run `:PlugInstall`
 
 #### Dependencies
-[COC](https://github.com/neoclide/coc.nvim) | [PEP8](https://pypi.org/project/autopep8/) | [FZF](https://github.com/junegunn/fzf.vim) | [Copilot](https://github.com/github/copilot.vim)  
+[COC](https://github.com/neoclide/coc.nvim) | [PEP8](https://pypi.org/project/autopep8/) | [FZF](https://github.com/junegunn/fzf.vim) | [Copilot](https://github.com/github/copilot.vim) | [Prettier](https://github.com/prettier/vim-prettier)  
 - COC
 ~~~
 :CocInstall coc-pyright
@@ -406,6 +406,12 @@ For install themes first we need to create two folders in /home/<user>/ director
 $ cd
 $ mkdir .icons
 $ mkdir .themes
+~~~
+
+- Prettier
+~~~
+$ cd .config/nvim/plugged/vim-prettier
+$ npm install
 ~~~
 
 #### Icon theme Kora
