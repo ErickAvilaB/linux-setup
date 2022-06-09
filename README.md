@@ -1,56 +1,24 @@
 # Linux Setup :
-Author: Erick Avila | @ErickAvilaB on GitHub
+Author: Erick Avila | @ErickAvilaB
 ***
 
 ## Table of Contents
-1. [Distribution](#distribution)
-2. [Initial settings](#initial-settings)
-	* [WiFi](#wifi)
-	* [Hour](#hour)
-3. [Update and Upgrade](#update)
-4. [Install Chrome](#chrome)
-5. [Install Git](#git)
-	* [Git config](#git-config)
-	* [SSH key](#ssh)
-6. [Install zsh](#zsh)
-	* [ZSH plugins](#zsh-plugins)
-	* [ZSH config](#zsh-config)
-7. [Xfece terminal](#xfce-terminal)
-8. [Install tmux](#tmux)
-9. [Install NeoVim](#nvim)
-10. [Customization](#Customization)
-11. [Plank](#Plank)
-12. [Ulauncher](#Ulauncher)
-13. [Extra](#extra)
 ***
 
 <a name="distribution"></a>
 ## Distribution
-I use Linux lite, it's a Ubuntu's child. Download ISO from the [official page](https://www.linuxliteos.com/download.php) and boot with [Rufus](https://rufus.ie/es/).
+Xubuntu is an Ubuntu flavour. Download the **Supported LTS release: 20.04, Focal Fossa** ISO from the [official page](https://xubuntu.org/download/).
 ***
 
-<a name="initial-settings"></a>
-## Initial settings
-
-<a name="wifi"></a>
-### WiFi
-[Guide](https://askubuntu.com/questions/1030653/wifi-randomly-disconnected-on-ubuntu-18-04-lts)  
-I've got problems with WiFi, it randomly shutdown and it's necessary restart the PC to get WiFi back.
-For solve it run at terminal:
-~~~
-$ sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
-~~~
-And change `wifi.powersave = 3` to `wifi.powersave = 2`.
-
 <a name="hour"></a>
-### Hour
-I've got problems whit hour too, it mistakenly change.Run the next command at terminal to solve it:
+## Hour
+Dual boot with Window and Linux has problem with the hour, to solve that first **set right hour in window** the run:
 ~~~
 $ timedatectl set-local-rtc 1 --adjust-system-clock
 ~~~
 ***
 
-### Create workspace folder
+## Create workspace folder
 ~~~
 $ cd
 $ mkdir workspace
@@ -58,7 +26,7 @@ $ mkdir workspace
 
 <a name="update"></a>
 ## Update and Upgrade
-Here we are going to update and upgrade. Just run the follow command:`$ sudo apt update && sudo apt upgrade`
+`$ sudo apt update && sudo apt upgrade`
 ***
 
 <a name="chrome"></a>
@@ -69,7 +37,7 @@ For chrome installation we need go to [official chrome web site](https://www.goo
 <a name="git"></a>
 ## Install git
 [Guide](https://git-scm.com/download/linux)  
-Git is a fundamental tool for development, so let's install it: `$ sudo apt-get install git`.
+Install git with: `$ sudo apt-get install git`.
 ***
 
 <a name="git-config"></a>
@@ -106,7 +74,7 @@ $ mkdir .ssh
 $ cd .ssh
 $ ssh-keygen
 
-# Add public key to GitHub
+# Add public key to GitHub(file ends .pub)
 
 $ ssh-add ~/ssh/<name private key>
 ~~~
@@ -192,7 +160,7 @@ ZSH_THEME="typewritten/typewritten"
 TYPEWRITTEN_PROMPT_LAYOUT="pure"
 
 # Config theme colors
-TYPEWRITTEN_COLOR_MAPPINGS="primary:#A1A7B4;secondary:#BB77D9;accent:#BB77D9;info_negative:#D96C80;info_positive:#98C379"
+TYPEWRITTEN_COLOR_MAPPINGS="primary:#A5ABCB;secondary:#B888DA;accent:#B888DA;info_negative:#F07178;info_positive:#A4C37D"
 ~~~
 
 ### JSON tools
@@ -268,45 +236,80 @@ bindkey "[[1;3D" backward-word
 ~~~
 ***
 
-<a name="xfce-terminal"></a>
-## Xfce terminal
-Just copy the next settings:
+<a name="alacritty"></a>
+## Alacritty terminal
+Install with the next [video](https://www.youtube.com/watch?v=9ttxDIolNBo)
 
-### 0 Install Nerd Font
+### Install Nerd Font
 [Download](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip)  
 Install:
 ~~~
+# In zip file directory
 $ unzip <package name>
-$ sudo mv *.ttf /usr/share/fonts/
+$ sudo mv * /usr/share/fonts/
 ~~~
 
-### 1
-![1](./assets/1.png)
-
-### 2
-![2](./assets/2.png)
-
-### 3
-![3](./assets/3.png)
-- Text color: #A1A7B4  
-- Background: #282C34  
-- Cursor: #BB77D9  
-- Selection: #BB77D9  
-- Bold: #98C379
-***
-
-<a name="tmux"></a>
-## Install tmux
-[Ho my tmux](https://github.com/gpakosz/.tmux)  
+Config:
 ~~~
-# Install tmux
-$ sudo apt install tmux
+# Crate config directory
+$ cd .config
+$ mkdir alacritty
+$ nano alacritty.yml
 
-# Install ho my tmux
-$ cd
-$ git clone https://github.com/gpakosz/.tmux.git
-$ ln -s -f .tmux/.tmux.conf
-$ cp .tmux/.tmux.conf.local .
+# In alacritty.yml copy:
+
+# Window config
+window:
+  dimensions:
+    columns: 125
+    lines: 40
+  opacity: 1.0
+  dynamic_title: false
+
+# Font config
+font:
+  size: 9.0
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Medium
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Bold
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Medium Italic
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+    style: Bold Italic
+
+# Colors. Theme Palenight
+colors:
+  # Default colors
+  primary:
+    background: '0x292d3e'
+    foreground: '0xd0d0d0'
+
+  # Normal colors
+  normal:
+    black:   '0x292d3e'
+    red:     '0xf07178'
+    green:   '0xc3e88d'
+    yellow:  '0xffcb6b'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0x89ddff'
+    white:   '0xd0d0d0'
+
+  # Bright colors
+  bright:
+    black:   '0x434758'
+    red:     '0xff8b92'
+    green:   '0xddffa7'
+    yellow:  '0xffe585'
+    blue:    '0x9cc4ff'
+    magenta: '0xe1acff'
+    cyan:    '0xa3f7ff'
+    white:   '0xffffff'
 ~~~
 ***
 
@@ -318,7 +321,6 @@ $ sudo add-apt-repository ppa:neovim-ppa/stable
 $ sudo apt-get update
 $ sudo apt-get install neovim
 ~~~
-Create a directory named **nvim** in **~/.cofig**, then create an directory named **plugged** there will save the plugins.
 ***
 
 ### Install vim plug
@@ -352,7 +354,7 @@ $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bas
 $ source ~/.zshrc
 
 # Install node
-$ nvm install node
+$ nvm install --lts
 
 # Install node neovim
 $ npm install -g neovim
@@ -363,7 +365,7 @@ $ npm install -g neovim
 ~~~
 $ cd
 $ cd .config/
-$ git clone https://github.com/ErickAvilaB/nvim.git
+$ git clone git@github.com:ErickAvilaB/nvim.git
 $ cd nvim
 $ mkdir plugged
 ~~~
@@ -416,16 +418,16 @@ $ mkdir .themes
 
 #### Icon theme Kora
 
-Go to this [site](https://www.xfce-look.org/p/1166289/) and download the theme called **papirus-icon-theme-cyan-folders.tarxz**. Then run the commands:
+Go to this [site](https://www.xfce-look.org/p/1256209) and download the theme called **kora-1-5-2zip**. Then run the commands:
 ~~~
 $ sudo mv Downloads/<package name> ~/.icons
 $ cd .icons
 $ tar -xvf <package name>
-$ gtk-update-icon-cache /home/<user>/.icons/Papirus-Dark
+$ gtk-update-icon-cache /home/<user>/.icons/<package name>
 $ sudo rm <package name>
 ~~~
 
-Now Settings > Appearance > Icons; and select **Pairus-Dark**
+Now Settings > Appearance > Icons; and select **Kora**  
 ![Config](./assets/4.png)
 
 ### Windows theme Nordic
@@ -440,10 +442,10 @@ $ sudo rm <package name .tar>
 Settings > Appearance > Style; and select **Sweet-Dark**
 Settings > Appearance > window manager; and select **Sweet-Dark**
 
-1
+1  
 ![Style](./assets/5.png)
 
-2
+2  
 ![Window](./assets/6.png)
 
 ### Change font
@@ -455,14 +457,13 @@ $ sudo mv . /usr/share/fonts
 ~~~
 
 ### Desktop
-![Wallpaper](./assets/viaje-al-espacio_1920x1080_xtrafondos.com.jpg)
+![Wallpaper](./assets/auto-en-carretera-con-el-cielo-nocturno-arte-digital_1920x1080_xtrafondos.com.jpg)
 ![Config](./assets/8.png)
 
 Disable desktop icons. Settings > Desktop > Icons > Appearance > Icon type: None  
-Create **workspace** folder into ~/
 
 ### Cursor
-Go to this [site](https://www.gnome-look.org/p/1393084/) and download the theme called **Sweet-cursors.tarxz**. Then run the commands:
+Go to this [site](https://www.xfce-look.org/p/1356095) and download the theme called **volantes_cursors.targz**. Then run the commands:
 ~~~
 $ sudo mv Downloads/<package name> ~/.icons
 $ cd .icons
@@ -496,6 +497,9 @@ Add to startup. Go to Settings > Session and Start Up > Applications > Add; fill
 $ sudo add-apt-repository ppa:agornostal/ulauncher && sudo apt update && sudo apt install ulauncher
 ~~~
 ![Config](./assets/16.png)
+
+### Install theme for Ulauncher
+[Install Zorin theme](https://github.com/NayamAmarshe/ulauncher-zorinBlueDark)
 
 <a name="extra"></a>
 ## Some extra things
