@@ -3,6 +3,19 @@ Author: Erick Avila | @ErickAvilaB
 ***
 
 ## Table of Contents
+1. [Distribution](#distribution)
+2. [Hour](#hour)
+3. [Update and Upgrade](#update)
+4. [Chrome](#chrome)
+5. [Git installation and configuration](#git)
+6. [Ssh Key](#ssh)
+7. [Z shell](#zsh)
+8. [Alacritty](#alacritty)
+9. [Nvim](#nvim)
+10. [Customization](#Customization)
+11. [Plank icon dock](#Plank)
+12. [Ulauncher](#Ulauncher)
+13. [Extra](#extra)
 ***
 
 <a name="distribution"></a>
@@ -40,7 +53,6 @@ For chrome installation we need go to [official chrome web site](https://www.goo
 Install git with: `$ sudo apt-get install git`.
 ***
 
-<a name="git-config"></a>
 ## Git config
 [Guide](https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Configurando-Git-por-primera-vez)  
 Git generate a file config where is located all user and global settings, to access that file run at terminal `$ git config --global -e`. There copy the next content:
@@ -96,7 +108,6 @@ $ chsh -s $(which zsh)
 $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ~~~
 
-<a name="zsh-plugins"></a>
 ### Install zsh plugins
 Some plugins for improve zsh experience.
 
@@ -179,11 +190,10 @@ plugins=(
 ### CFLASK
 Download:
 ~~~
-$ git clone https://github.com/ErickAvilaB/cflask.git ~/workspace
+$ git clone https://github.com/ErickAvilaB/cflask.git ~/
 ~~~
 Then create alias to main.sh(~/workspace/cflask/main.sh) on .zshrc
 
-<a name="zsh-config"></a>
 ### ZSH config
 [File](./assets/.zshrc)
 ~~~
@@ -500,6 +510,13 @@ $ sudo add-apt-repository ppa:agornostal/ulauncher && sudo apt update && sudo ap
 
 ### Install theme for Ulauncher
 [Install Zorin theme](https://github.com/NayamAmarshe/ulauncher-zorinBlueDark)
+Downloads with:
+~~~
+$ git clone https://github.com/NayamAmarshe/ulauncher-zorinBlueDark/ \
+  ~/.config/ulauncher/user-themes/zorin-blue-dark
+
+# Then select the theme into config panel.
+~~~
 
 <a name="extra"></a>
 ## Some extra things
