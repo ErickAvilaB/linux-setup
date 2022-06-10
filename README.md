@@ -430,7 +430,7 @@ $ sudo rm <package name>
 Now Settings > Appearance > Icons; and select **Kora**  
 ![Config](./assets/4.png)
 
-### Windows theme Nordic
+### Windows theme
 Go to this [site](https://www.xfce-look.org/p/1253385) and download the theme called **Sweet-Dark.tarxz**. Then run the commands:
 ~~~
 $ sudo mv Downloads/<package name> ~/.themes
@@ -530,6 +530,9 @@ $ npm i -g markserv
 $ sudo add-apt-repository ppa:peek-developers/stable
 $ sudo apt update
 $ sudo apt install peek
+
+# Install okular
+$ sudo snap install okular
 ~~~
 
 (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
