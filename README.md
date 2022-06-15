@@ -192,7 +192,7 @@ Download:
 ~~~
 $ git clone https://github.com/ErickAvilaB/cflask.git ~/
 ~~~
-Then create alias to main.sh(~/workspace/cflask/main.sh) on .zshrc
+Then create alias to main.sh(~/cflask/main.sh) on .zshrc
 
 ### ZSH config
 [File](./assets/.zshrc)
@@ -260,6 +260,7 @@ $ sudo mv * /usr/share/fonts/
 ~~~
 
 Config:
+[file](./assets/alacritty.yml)
 ~~~
 # Crate config directory
 $ cd .config

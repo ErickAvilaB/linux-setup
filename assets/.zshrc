@@ -8,6 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+
 # Use theme
 ZSH_THEME="typewritten/typewritten"
 
@@ -15,7 +16,7 @@ ZSH_THEME="typewritten/typewritten"
 TYPEWRITTEN_PROMPT_LAYOUT="pure"
 
 # Config theme colors
-TYPEWRITTEN_COLOR_MAPPINGS="primary:#A1A7B4;secondary:#BB77D9;accent:#BB77D9;info_negative:#D96C80;info_positive:#98C379"
+TYPEWRITTEN_COLOR_MAPPINGS="primary:#A5ABCB;secondary:#89DDFF;accent:#89DDFF;info_negative:#F07178;info_positive:#C3E88D"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -112,6 +113,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 # Alias
 # NeoVim Aliases
 alias nv="nvim"
@@ -121,45 +123,43 @@ alias v="nvim ./"
 alias cl="clear"
 alias e="exit"
 alias bat="batcat"
-alias tm="tmux"
 alias sns="sensors"
 alias ht="htop"
 alias tu="thunar"
 alias xgo="xdg-open"
 alias lo="lsof -i -P -n"
-alias get="sh ~/workspace/GETRequest.sh"
-alias cnode="sh ~workspace/CreateNodeProject.sh"
-alias cflask="sh ~/workspace/CreateFlaskProject/main.sh"
-alias cs="cowsay"
+alias msqs="sudo service mysql status"
+alias cfl="sh ~/cflask/main.sh"
 
 # Git aliases
-alias gi="git init"
-alias gs="git status"
-alias gss="git status -s"
 alias ga="git add"
 alias gaa="git add -A"
-alias gc="git commit -m"
+alias gbd="git branch -d"
+alias gbl="git branch -l"
+alias gbm="git branch -m"
+alias gcl="git clone"
+alias gcm="git commit -m"
 alias gco="git checkout"
 alias gcob="git checkout -b"
-alias gbd="git branch -d"
-alias gbm="git branch -m"
-alias gbl="git branch -l"
 alias gd="git diff"
 alias gds="git diff --staged"
+alias gf="git fetch"
+alias gi="git init"
 alias gl="git log"
 alias glo="git log --oneline"
 alias glp="git log -p"
+alias gm="git merge"
+alias gp="git push"
+alias gpl="git pull"
+alias gpom="git push -u origin master"
+alias grt="git restore"
 alias grao="git remote add origin"
+alias grs="git reset"
 alias grsuo="git remote set-url origin"
 alias grv="git remote -v"
-alias grs="git reset"
-alias gpom="git push -u origin master"
-alias gp="git push"
-alias gf="git fetch"
-alias gpl="git pull"
+alias gs="git status"
+alias gss="git status -s"
 alias gu=updateGitRepo
-alias gr="git restore"
-alias gm="git merge"
 
 function updateGitRepo() {
 	git fetch
