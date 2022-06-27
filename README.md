@@ -384,7 +384,7 @@ $ mkdir plugged
 After open plugins.vim and run `:PlugInstall`
 
 #### Dependencies
-[COC](https://github.com/neoclide/coc.nvim) | [PEP8](https://pypi.org/project/autopep8/) | [FZF](https://github.com/junegunn/fzf.vim) | [Copilot](https://github.com/github/copilot.vim) | [Prettier](https://github.com/prettier/vim-prettier)  
+[COC](https://github.com/neoclide/coc.nvim) | [PEP8](https://pypi.org/project/autopep8/) | [FZF](https://github.com/junegunn/fzf.vim) | [Copilot](https://github.com/github/copilot.vim) | [Prettier](https://github.com/prettier/vim-prettier) | [Tab Nine](https://github.com/neoclide/coc-tabnine#install)  
 - COC
 ~~~
 :CocInstall coc-pyright
@@ -414,6 +414,15 @@ Run `:Copilot setup`, login on GitHub and paste the code.
 ~~~
 $ cd .config/nvim/plugged/vim-prettier
 $ npm install
+~~~
+
+- Tab Nine
+~~~
+:CocInstall coc-tabnine
+
+# add "ignore_all_lsp": true
+:CocCommand tabnine.openConfig
+:CocCommand tabnine.openHub
 ~~~
 ***
 
