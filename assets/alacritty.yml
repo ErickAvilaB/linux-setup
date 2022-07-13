@@ -1,8 +1,8 @@
 # Window config
 window:
   dimensions:
-    columns: 125
-    lines: 40
+    columns: 150
+    lines: 45
   opacity: 1.0
   dynamic_title: false
 

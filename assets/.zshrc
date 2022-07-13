@@ -14,6 +14,7 @@ ZSH_THEME="typewritten/typewritten"
 
 # Config cursor style
 TYPEWRITTEN_PROMPT_LAYOUT="pure"
+TYPEWRITTEN_ARROW_SYMBOL="➜"
 
 # Config theme colors
 TYPEWRITTEN_COLOR_MAPPINGS="primary:#A5ABCB;secondary:#89DDFF;accent:#89DDFF;info_negative:#F07178;info_positive:#C3E88D"
@@ -122,7 +123,7 @@ alias v="nvim ./"
 # System aliases
 alias cl="clear"
 alias e="exit"
-alias bat="batcat"
+alias bat=showFileContent
 alias sns="sensors"
 alias ht="htop"
 alias tu="thunar"
@@ -130,6 +131,10 @@ alias xgo="xdg-open"
 alias lo="lsof -i -P -n"
 alias msqs="sudo service mysql status"
 alias cfl="sh ~/cflask/main.sh"
+alias ls="logo-ls --git-status"
+alias la="logo-ls -a --git-status -o -X --time-style=RFC1123Z"
+alias img=displayImage
+alias GET=getRequest
 
 # Git aliases
 alias ga="git add"
@@ -160,6 +165,19 @@ alias grv="git remote -v"
 alias gs="git status"
 alias gss="git status -s"
 alias gu=updateGitRepo
+
+# Functions
+function showFileContent() {
+	batcat $1 --theme=TwoDark --paging=never
+}
+
+function displayImage(){
+	ascii-image-converter $1 -b --threshold 0 -C -d 55,25
+}
+
+function getRequest(){
+	curl $1 | json_pp | batcat --language=json --theme=TwoDark --paging=never
+}
 
 function updateGitRepo() {
 	git fetch
