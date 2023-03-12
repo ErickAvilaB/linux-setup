@@ -1,14 +1,14 @@
 # Window config
 window:
   dimensions:
-    columns: 150
-    lines: 45
+    columns: 125
+    lines: 40
   opacity: 1.0
   dynamic_title: false
 
 # Font config
 font:
-  size: 9.0
+  size: 8.0
   normal:
     family: JetBrainsMono Nerd Font
     style: Medium
