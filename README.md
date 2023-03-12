@@ -20,7 +20,7 @@ Author: Erick Avila | @ErickAvilaB
 
 <a name="distribution"></a>
 ## Distribution
-Xubuntu is an Ubuntu flavour. Download the **Supported LTS release: 20.04, Focal Fossa** ISO from the [official page](https://xubuntu.org/download/).
+Xubuntu is an Ubuntu flavour. Download the **Supported LTS release: 20.04, Focal Fossa** ISO from the [official page](https://xubuntu.org/).
 ***
 
 <a name="hour"></a>
@@ -61,9 +61,6 @@ Git generate a file config where is located all user and global settings, to acc
 [user]
 	name  = Erick Avila
 	email  = yahir7083@gmail.com
-# Please adapt and uncomment the following lines:
-# name = erick
-# email = erick@erick.(none)
 [core]
 	editor  = nvim
 	autocrlf = input
@@ -85,15 +82,16 @@ $ cd
 $ mkdir .ssh
 $ cd .ssh
 $ ssh-keygen
+$ ssh-add ~/ssh/<name private key>
 
 # Add public key to GitHub(file ends .pub)
-
-$ ssh-add ~/ssh/<name private key>
 ~~~
 
 <a name="zsh"></a>
 ## Install ZSH and ho my zsh
 [Zsh guide](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) | [Ho my zsh guide](https://ohmyz.sh/)  
+
+File configuration: [**zsh.rc**](https://github.com/ErickAvilaB/linux-setup/blob/master/assets/.zshrc)
 ~~~
 # Install zsh
 $ sudo apt install zsh
@@ -156,22 +154,16 @@ Download:
 ~~~
 $ git clone https://github.com/reobin/typewritten.git $ZSH_CUSTOM/themes/typewritten
 ~~~
-Make symlink:
-~~~
-$ ln -s "$ZSH_CUSTOM/themes/typewritten/typewritten.zsh-theme" "$ZSH_CUSTOM/themes/typewritten.zsh-theme"
-
-$ ln -s "$ZSH_CUSTOM/themes/typewritten/async.zsh" "$ZSH_CUSTOM/themes/async"
-~~~
 Add theme to .zshrc:
 ~~~
-# Use theme
 ZSH_THEME="typewritten/typewritten"
 
 # Config cursor style
 TYPEWRITTEN_PROMPT_LAYOUT="pure"
+TYPEWRITTEN_ARROW_SYMBOL="➜"
 
 # Config theme colors
-TYPEWRITTEN_COLOR_MAPPINGS="primary:#A5ABCB;secondary:#B888DA;accent:#B888DA;info_negative:#F07178;info_positive:#A4C37D"
+TYPEWRITTEN_COLOR_MAPPINGS="primary:#A5ABCB;secondary:#89DDFF;accent:#89DDFF;info_negative:#F07178;info_positive:#C3E88D"
 ~~~
 
 ### JSON tools
@@ -192,135 +184,25 @@ Download:
 ~~~
 $ git clone https://github.com/ErickAvilaB/cflask.git ~/
 ~~~
-Then create alias to main.sh(~/cflask/main.sh) on .zshrc
-
-### ZSH config
-[File](./assets/.zshrc)
-~~~
-# Alias
-# NeoVim Aliases
-alias nv="nvim"
-alias v="nvim ./"
-
-# System aliases
-alias cl="clear"
-alias e="exit"
-alias bat="batcat"
-alias tm="tmux"
-alias sns="sensors"
-alias ht="htop"
-alias tu="thunar"
-alias xgo="xdg-open"
-alias lo="lsof -i -P -n"
-
-# Git aliases
-alias gi="git init"
-alias gs="git status"
-alias gss="git status -s"
-alias ga="git add"
-alias gaa="git add -A"
-alias gc="git commit -m"
-alias gco="git checkout"
-alias gcob="git checkout -b"
-alias gbd="git branch -d"
-alias gbm="git branch -m"
-alias gd="git diff"
-alias gds="git diff --staged"
-alias gl="git log"
-alias glo="git log --oneline"
-alias grao="git remote add origin"
-alias gpom="git push -u origin master"
-alias gp="git push"
-alias gf="git fetch"
-alias gpl="git pull"
-alias gu=updateGitRepo
-
-function updateGitRepo() {
-	git fetch
-	git pull
-}
-
-# Use ctrl for move while words
-bindkey "[[1;3C" forward-word
-bindkey "[[1;3D" backward-word
-~~~
+Then create alias to main.sh(~/cflask/main.sh) on .zshrc `alias cfl="sh ~/cflask/main.sh"`
 ***
 
 <a name="alacritty"></a>
 ## Alacritty terminal
-Install with the next [video](https://www.youtube.com/watch?v=9ttxDIolNBo)
+Install with the next [video](https://www.youtube.com/watch?v=9ttxDIolNBo)  
+Configuration file: [**alacritty.yml**](https://github.com/ErickAvilaB/linux-setup/blob/master/assets/alacritty.yml)
 
 ### Install Nerd Font
-[Download](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip)  
+[Download JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads)  
 Install:
 ~~~
+$ mkdir JetBrainsMono
+$ mv <package name> JetBrainsMono
+$ cd JetBrainsMono
+
 # In zip file directory
 $ unzip <package name>
 $ sudo mv * /usr/share/fonts/
-~~~
-
-Config:
-[file](./assets/alacritty.yml)
-~~~
-# Crate config directory
-$ cd .config
-$ mkdir alacritty
-$ nano alacritty.yml
-
-# In alacritty.yml copy:
-
-# Window config
-window:
-  dimensions:
-    columns: 125
-    lines: 40
-  opacity: 1.0
-  dynamic_title: false
-
-# Font config
-font:
-  size: 9.0
-  normal:
-    family: JetBrainsMono Nerd Font
-    style: Medium
-  bold:
-    family: JetBrainsMono Nerd Font
-    style: Bold
-  italic:
-    family: JetBrainsMono Nerd Font
-    style: Medium Italic
-  bold_italic:
-    family: JetBrainsMono Nerd Font
-    style: Bold Italic
-
-# Colors. Theme Palenight
-colors:
-  # Default colors
-  primary:
-    background: '0x292d3e'
-    foreground: '0xd0d0d0'
-
-  # Normal colors
-  normal:
-    black:   '0x292d3e'
-    red:     '0xf07178'
-    green:   '0xc3e88d'
-    yellow:  '0xffcb6b'
-    blue:    '0x82aaff'
-    magenta: '0xc792ea'
-    cyan:    '0x89ddff'
-    white:   '0xd0d0d0'
-
-  # Bright colors
-  bright:
-    black:   '0x434758'
-    red:     '0xff8b92'
-    green:   '0xddffa7'
-    yellow:  '0xffe585'
-    blue:    '0x9cc4ff'
-    magenta: '0xe1acff'
-    cyan:    '0xa3f7ff'
-    white:   '0xffffff'
 ~~~
 ***
 
@@ -328,9 +210,9 @@ colors:
 ## Install NeoVim
 [Guide](https://github.com/neovim/neovim/wiki/Installing-Neovim)  
 ~~~
-$ sudo add-apt-repository ppa:neovim-ppa/stable
-$ sudo apt-get update
-$ sudo apt-get install neovim
+# Install from snap
+
+$ sudo snap install nvim --classic
 ~~~
 ***
 
@@ -359,7 +241,7 @@ $ pip3 install --upgrade pynvim
 ~~~
 # Install node through nvm
 # Install nvm
-$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
 # Update zsh
 $ source ~/.zshrc
@@ -381,7 +263,7 @@ $ cd nvim
 $ mkdir plugged
 ~~~
 
-After open plugins.vim and run `:PlugInstall`
+After open plugins.vim and run  `:PlugUpgrade`, `:PlugInstall`, `:PlugUpdate`.
 
 #### Dependencies
 [COC](https://github.com/neoclide/coc.nvim) | [PEP8](https://pypi.org/project/autopep8/) | [FZF](https://github.com/junegunn/fzf.vim) | [Copilot](https://github.com/github/copilot.vim) | [Prettier](https://github.com/prettier/vim-prettier) | [Tab Nine](https://github.com/neoclide/coc-tabnine#install)  
@@ -393,9 +275,39 @@ After open plugins.vim and run `:PlugInstall`
 :CocInstall coc-tsserver
 ~~~
 
+- Tab Nine
+~~~
+:CocInstall coc-tabnine
+
+# add "ignore_all_lsp": true
+:CocCommand tabnine.openConfig
+:CocCommand tabnine.openHub
+~~~
+
 - PEP8
 ~~~
 $ pip install --upgrade autopep8
+~~~
+
+- Pylint
+~~~
+$ pip install pylint
+~~~
+
+- Prettier
+~~~
+$ cd .config/nvim/plugged/vim-prettier
+$ npm install
+~~~
+
+- Markserv
+~~~
+$ npm i -g markserv
+~~~
+
+- Live Server
+~~~
+$ npm install -g live-server
 ~~~
 
 - FZF
@@ -409,36 +321,21 @@ $ sudo apt-get install silversearcher-ag
 
 - Copilot  
 Run `:Copilot setup`, login on GitHub and paste the code.
-
-- Prettier
-~~~
-$ cd .config/nvim/plugged/vim-prettier
-$ npm install
-~~~
-
-- Tab Nine
-~~~
-:CocInstall coc-tabnine
-
-# add "ignore_all_lsp": true
-:CocCommand tabnine.openConfig
-:CocCommand tabnine.openHub
-~~~
 ***
 
 <a name="Customization"></a>
 ## Customization
 ### Themes
-For install themes first we need to create two folders in /home/<user>/ directory, the first will be called **.icons** and the second **.themes**
+For install themes first we need to create two folders in /home/<user>/directory, the first will be called **.icons** and the second **.themes**
 ~~~
 $ cd
 $ mkdir .icons
 $ mkdir .themes
 ~~~
 
-#### Icon theme Kora
+#### Install icon theme
 
-Go to this [site](https://www.xfce-look.org/p/1256209) and download the theme called **kora-1-5-2zip**. Then run the commands:
+Go to this [site](https://www.xfce-look.org/p/1340791) and download the theme called **Reversal-blue.tar.xz**. Then run the commands:
 ~~~
 $ sudo mv Downloads/<package name> ~/.icons
 $ cd .icons
@@ -447,11 +344,10 @@ $ gtk-update-icon-cache /home/<user>/.icons/<package name>
 $ sudo rm <package name>
 ~~~
 
-Now Settings > Appearance > Icons; and select **Kora**  
-![Config](./assets/4.png)
+Settings > Appearance > Icons; and select **Reversal**  
 
 ### Windows theme
-Go to this [site](https://www.xfce-look.org/p/1253385) and download the theme called **Sweet-Dark.tarxz**. Then run the commands:
+Go to this [site](https://www.xfce-look.org/p/1687249/) and download the theme called **Dracula.tar.xz**. Then run the commands:
 ~~~
 $ sudo mv Downloads/<package name> ~/.themes
 $ cd .themes
@@ -459,27 +355,18 @@ $ tar -xvf <package name>
 $ sudo rm <package name .tar>
 ~~~
 
-Settings > Appearance > Style; and select **Sweet-Dark**
-Settings > Appearance > window manager; and select **Sweet-Dark**
-
-1  
-![Style](./assets/5.png)
-
-2  
-![Window](./assets/6.png)
+Settings > Appearance > Style; and select **Dracula**  
+Settings > Appearance > window manager; and select **Dracula**
 
 ### Change font
 [Download font](https://www.dafontfree.io/download/san-francisco-text/?wpdmdl=64309&refresh=62615668b4aad1650546280&ind=1601919915418&filename=1601919916wpdm_San-Francisco.zip)
 ~~~
 $ unzip San-Francisco.zip
 $ cd San Francisco/SFUIDisplay/
-$ sudo mv . /usr/share/fonts
+$ sudo mv * /usr/share/fonts
 ~~~
 
-### Desktop
-![Wallpaper](./assets/auto-en-carretera-con-el-cielo-nocturno-arte-digital_1920x1080_xtrafondos.com.jpg)
-![Config](./assets/8.png)
-
+Disable custom dpi. Settings > Desktop > Icons > Appearance > Custom DPI: None  
 Disable desktop icons. Settings > Desktop > Icons > Appearance > Icon type: None  
 
 ### Cursor
@@ -490,15 +377,7 @@ $ cd .icons
 $ tar -xvf <package name>
 $ sudo rm <package name .tar>
 ~~~
-Settings > Mouse > Theme; and select **Sweet**  
-![Sweet cursor](./assets/17.png)
-
-## Panel
-![Config](./assets/9.png)
-![Config](./assets/10.png)
-![Config](./assets/11.png)
-![Config](./assets/12.png)
-![Panel button](./assets/13.png)
+Settings > Mouse > Theme; and select **volantes_cursors**  
 
 <a name="Plank"></a>
 ## Plank
@@ -507,8 +386,6 @@ $ sudo apt install plank
 ~~~
 Add to startup. Go to Settings > Session and Start Up > Applications > Add; fill whit plank.
 ![Config](./assets/sas.png)
-![Config](./assets/14.png)
-![Config](./assets/15.png)
 
 <a name="Ulauncher"></a>
 ## Ulauncher
@@ -516,7 +393,6 @@ Add to startup. Go to Settings > Session and Start Up > Applications > Add; fill
 ~~~
 $ sudo add-apt-repository ppa:agornostal/ulauncher && sudo apt update && sudo apt install ulauncher
 ~~~
-![Config](./assets/16.png)
 
 ### Install theme for Ulauncher
 [Install Zorin theme](https://github.com/NayamAmarshe/ulauncher-zorinBlueDark)
@@ -527,6 +403,9 @@ $ git clone https://github.com/NayamAmarshe/ulauncher-zorinBlueDark/ \
 
 # Then select the theme into config panel.
 ~~~
+
+### Shortcuts
+- Super + H | alacritty --command htop
 
 <a name="extra"></a>
 ## Some extra things
@@ -541,25 +420,17 @@ $ pip install Flask
 $ pip install virtualenv
 $ sudo apt install python3.8-venv
 
-# Install live server
-$ npm install -g live-server
-
 # Install neofetch
 $ sudo apt install neofetch
 
 # Install htop
 $ sudo apt install htop
 
-# Install markserv
-$ npm i -g markserv
-
-# Install peek
-$ sudo add-apt-repository ppa:peek-developers/stable
-$ sudo apt update
-$ sudo apt install peek
-
 # Install okular
 $ sudo snap install okular
 ~~~
+
+## Example
+![Desktop](./assets/img/gallery.png)
 
 (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
