@@ -385,7 +385,6 @@ Settings > Mouse > Theme; and select **volantes_cursors**
 $ sudo apt install plank
 ~~~
 Add to startup. Go to Settings > Session and Start Up > Applications > Add; fill whit plank.
-![Config](./assets/sas.png)
 
 <a name="Ulauncher"></a>
 ## Ulauncher
@@ -431,6 +430,7 @@ $ sudo snap install okular
 ~~~
 
 ## Example
-![Desktop](./assets/img/gallery.png)
+[Gallery](https://github.com/ErickAvilaB/linux-setup/tree/master/assets/img)
+![Desktop](https://github.com/ErickAvilaB/linux-setup/blob/master/assets/img/gallery.png)
 
 (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
