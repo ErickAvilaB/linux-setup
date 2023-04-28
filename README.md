@@ -147,7 +147,7 @@ git clone https://github.com/ErickAvilaB/cflask.git
 ```
 
 ### Configuration
-File configuration: [**zsh.rc**](https://github.com/ErickAvilaB/linux-setup/blob/master/assets/.zshrc)
+File configuration: [**zsh.rc**](https://github.com/ErickAvilaB/linux-setup/blob/master/assets/config-files/.zshrc)
 ***
 
 ## Alacritty terminal
@@ -193,7 +193,7 @@ touch .config/alacritty/alacritty.yml
 ```
 
 ### Configuration
-Configuration file: [**alacritty.yml**](https://github.com/ErickAvilaB/linux-setup/blob/master/assets/alacritty.yml)
+Configuration file: [**alacritty.yml**](https://github.com/ErickAvilaB/linux-setup/blob/master/assets/config-files/alacritty.yml)
 
 ### Install Nerd Font
 [Download JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads)  
@@ -423,6 +423,6 @@ sudo snap install okular
 ***
 
 ## Final look
-![Desktop](https://github.com/ErickAvilaB/linux-setup/blob/master/assets/img/gallery.png)
+![Desktop](https://github.com/ErickAvilaB/linux-setup/blob/master/assets/img/Screenshot_2023-04-28_13-27-36.png)
 
 (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
