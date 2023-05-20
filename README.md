@@ -3,7 +3,7 @@ Author: Erick Avila | @ErickAvilaB
 ***
 
 ## Distribution
-Xubuntu is an Ubuntu flavour which uses xfce as graphic environment. Download the **Supported LTS release: 20.04, Focal Fossa** ISO from the [official page](https://xubuntu.org/release/20-04/).
+Xubuntu is an Ubuntu flavour which uses xfce as graphic environment. Download the **Supported LTS release: 22.04** ISO from the [official page](https://xubuntu.org/release/20-04/).
 ***
 
 ## Hour
@@ -22,7 +22,7 @@ mkdir workspace
 
 ## Update linux
 ```bash
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 ```
 ***
 
@@ -39,7 +39,7 @@ Install git with:
 ```bash
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt update
-sudo apt-get install git
+sudo apt-get install -y git
 ```
 
 ### Git config
@@ -74,7 +74,7 @@ cd
 mkdir .ssh
 cd .ssh
 ssh-keygen
-ssh-add ~/ssh/<name private key>
+ssh-keygen -t ed25519 -C "your_email@example.com"
 
 # Add public key to GitHub (file ends .pub)
 ```
@@ -85,7 +85,7 @@ ssh-add ~/ssh/<name private key>
 
 ```bash
 # Install zsh
-sudo apt install zsh
+sudo apt install -y zsh
 
 # Init zsh, then press 0 and exit
 zsh
@@ -94,7 +94,7 @@ zsh
 chsh -s $(which zsh)
 
 # Install curl
-sudo apt install curl
+sudo apt install -y curl
 
 # After restart install ho my zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -122,28 +122,11 @@ Download:
 git clone https://github.com/hlissner/zsh-autopair ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autopair
 ```
 
-#### JSON tools
-[Guide](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/jsontools)
-Download:
-```bash
-git clone https://github.com/ErickAvilaB/zsh-json.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-json
-```
-
 #### Typewritten
 [Guide](https://typewritten.dev/#/)  
 Download:
 ```bash
 git clone https://github.com/reobin/typewritten.git $ZSH_CUSTOM/themes/typewritten
-```
-
-#### CFLASK
-Download:
-```bash
-# Install flask
-pip install Flask
-
-cd
-git clone https://github.com/ErickAvilaB/cflask.git
 ```
 
 ### Configuration
@@ -166,7 +149,7 @@ rustup override set stable
 rustup update stable
 
 # Install dependencies
-sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+sudo apt install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
 
 # Compile the project
 cd alacritty
@@ -189,6 +172,7 @@ gzip -c extra/alacritty-msg.man | sudo tee /usr/local/share/man/man1/alacritty-m
 
 # Create config file
 cd
+mkdir .config/alacritty
 touch .config/alacritty/alacritty.yml
 ```
 
@@ -230,10 +214,9 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 [Guide](https://github.com/neovim/pynvim)  
 ```bash
 # Install pip
-sudo apt-get install python3-pip
+sudo apt-get install -y python3-pip
 
 # Install pynvim
-pip3 install pynvim
 pip3 install --upgrade pynvim
 ```
 
@@ -256,7 +239,7 @@ npm install -g neovim
 ### Clipboard
 ```bash
 # Install xclip
-sudo apt-get install xclip
+sudo apt-get install -y xclip
 ```
 
 ### Configuration
@@ -278,7 +261,7 @@ Then open plugins.vim and run:
 ```
 
 #### Dependencies
-[COC](https://github.com/neoclide/coc.nvim) | [PEP8](https://pypi.org/project/autopep8/) | [FZF](https://github.com/junegunn/fzf.vim) | [Copilot](https://github.com/github/copilot.vim) | [Prettier](https://github.com/prettier/vim-prettier)
+[COC](https://github.com/neoclide/coc.nvim) | [PEP8](https://pypi.org/project/autopep8/) | [Copilot](https://github.com/github/copilot.vim) | [Prettier](https://github.com/prettier/vim-prettier)
 
 - COC
 ```bash
@@ -286,6 +269,7 @@ Then open plugins.vim and run:
 :CocInstall coc-html
 :CocInstall coc-css
 :CocInstall coc-tsserver
+:CocInstall coc-json
 ```
 
 - PEP8
@@ -295,7 +279,7 @@ pip install --upgrade autopep8
 
 - Pylint
 ```bash
-pip install pylint
+pip install --upgrade pylint
 ```
 
 - Prettier
@@ -314,13 +298,10 @@ npm i -g markserv
 npm install -g live-server
 ```
 
-- FZF
+- Telescope
 ```bash
-# Install bat
-sudo apt install bat
-
-# AG
-sudo apt-get install silversearcher-ag
+# Grep
+sudo apt install -y ripgrep
 ```
 
 - Copilot  
@@ -376,7 +357,7 @@ sudo rm <package name .tar>
 
 ## Plank
 ```bash
-sudo apt install plank
+sudo apt install -y plank
 ```
 Add to startup. Go to Settings > Session and Start Up > Applications > Add; fill whit plank.
 ***
@@ -384,7 +365,7 @@ Add to startup. Go to Settings > Session and Start Up > Applications > Add; fill
 ## Ulauncher
 [Guide](https://ulauncher.io/#)
 ```bash
-sudo add-apt-repository ppa:agornostal/ulauncher && sudo apt update && sudo apt install ulauncher
+sudo add-apt-repository ppa:agornostal/ulauncher && sudo apt update && sudo apt install -y ulauncher
 ```
 
 ### Install theme for Ulauncher
@@ -405,20 +386,19 @@ git clone https://github.com/NayamAmarshe/ulauncher-zorinBlueDark/ \
 ## Some extra things
 ```bash
 # Install stacer
-sudo apt install stacer
+sudo apt install -y stacer
 
 # Install venv
-pip install virtualenv
-sudo apt install python3.8-venv
+pip install --upgrade virtualenv
 
 # Install neofetch
-sudo apt install neofetch
+sudo apt install -y neofetch
 
 # Install htop
-sudo apt install htop
+sudo apt install -y htop
 
-# Install okular
-sudo snap install okular
+# Install bat
+sudo apt install -y bat
 ```
 ***
 
