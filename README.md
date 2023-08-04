@@ -366,6 +366,7 @@ git clone https://github.com/NayamAmarshe/ulauncher-zorinBlueDark/ \
 git clone https://github.com/ogham/exa.git
 cargo build --release
 ```
+***
 
 ## Shortcuts
 - Super + M | alacritty --command htop
@@ -373,9 +374,6 @@ cargo build --release
 
 ## Some extra things
 ```bash
-# Install stacer
-sudo apt install -y stacer
-
 # Install venv
 pip install --upgrade virtualenv
 
