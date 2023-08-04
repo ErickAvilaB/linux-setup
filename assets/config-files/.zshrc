@@ -84,7 +84,6 @@ git
 zsh-autosuggestions
 zsh-syntax-highlighting
 zsh-autopair
-jsontools
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -117,66 +116,60 @@ source $ZSH/oh-my-zsh.sh
 
 # Alias
 # NeoVim Aliases
-alias nv="nvim"
-alias v="nvim ./"
+alias v="nvim"
 
 # System aliases
+alias updt="sudo apt update && sudo apt upgrade -y"
+alias clean=cleanAPT
 alias cl="clear"
 alias e="exit"
 alias bat=showFileContent
-alias sns="sensors"
-alias ht="htop"
-alias tu="thunar"
-alias xgo="xdg-open"
-alias lo="lsof -i -P -n"
-alias msqs="sudo service mysql status"
-alias cfl="sh ~/cflask/main.sh"
-alias ls="logo-ls --git-status"
-alias la="logo-ls -a --git-status -o -X --time-style=RFC1123Z"
-alias GET=getRequest
+alias version="lsb_release -a"
+alias zup="source ~/.zshrc"
+alias zrc=updateZsh
+alias vrc=updateNvim
+alias ls="exa --icons --color=always --group-directories-first"
+alias la="exa -a -l -G --git --icons --color=always --group-directories-first"
+alias tree=treeExa
 
 # Git aliases
-alias ga="git add"
 alias gaa="git add -A"
-alias gbd="git branch -d"
-alias gbl="git branch -l"
-alias gbm="git branch -m"
-alias gcl="git clone"
+alias gbm="git branch -M main"
 alias gcm="git commit -m"
-alias gco="git checkout"
-alias gcob="git checkout -b"
 alias gd="git diff"
 alias gds="git diff --staged"
-alias gf="git fetch"
 alias gi="git init"
-alias gl="git log"
-alias glo="git log --oneline"
-alias glp="git log -p"
-alias gm="git merge"
 alias gp="git push"
-alias gpl="git pull"
 alias gpom="git push -u origin master"
-alias grt="git restore"
 alias grao="git remote add origin"
-alias grs="git reset"
-alias grsuo="git remote set-url origin"
-alias grv="git remote -v"
 alias gs="git status"
 alias gss="git status -s"
-alias gu=updateGitRepo
 
 # Functions
 function showFileContent() {
 	batcat $1 --theme=TwoDark --paging=never
 }
 
-function getRequest(){
-	curl $1 | json_pp | batcat --language=json --theme=TwoDark --paging=never
+function treeExa() {
+	exa --tree --level=2 $1
 }
 
-function updateGitRepo() {
-	git fetch
-	git pull
+# Update nvim rc
+function updateNvim() {
+	cd ~/.config/nvim
+	nvim init.vim
+}
+
+# Update zsh rc
+function updateZsh() {
+	cd ~
+	nvim .zshrc
+}
+
+function cleanAPT() {
+	sudo apt autoclean
+	sudo apt clean
+	sudo apt autoremove -y
 }
 
 # Use ctrl for move while words

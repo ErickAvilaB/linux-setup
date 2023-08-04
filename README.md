@@ -3,7 +3,7 @@ Author: Erick Avila | @ErickAvilaB
 ***
 
 ## Distribution
-Xubuntu is an Ubuntu flavour which uses xfce as graphic environment. Download the **Supported LTS release: 22.04** ISO from the [official page](https://xubuntu.org/release/20-04/).
+Xubuntu is an Ubuntu flavour which uses xfce as graphic environment. Download the **Supported LTS release: 22.04** ISO from the [official page](https://xubuntu.org/release/22-04/).
 ***
 
 ## Hour
@@ -67,13 +67,12 @@ There paste the next content:
 ***
 
 ## SSH
-[Guide](https://git-scm.com/book/es/v2/Git-en-el-Servidor-Generando-tu-clave-p%C3%BAblica-SSH)  
+[Guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)  
 Create an ssh key and add it to GitHub.
 ```bash
 cd
 mkdir .ssh
 cd .ssh
-ssh-keygen
 ssh-keygen -t ed25519 -C "your_email@example.com"
 
 # Add public key to GitHub (file ends .pub)
@@ -224,7 +223,7 @@ pip3 install --upgrade pynvim
 [Guide](https://github.com/nvm-sh/nvm) | [NPM Neovim](https://www.npmjs.com/package/neovim/v/0.0.1)
 ```bash
 # Install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
 
 # Update zsh
 source ~/.zshrc
@@ -318,40 +317,22 @@ mkdir .themes
 ```
 
 ### Icon theme
-
-Go to this [site](https://www.xfce-look.org/p/1340791) and download the theme called **Reversal-blue.tar.xz**. Then run the commands:
-```bash
-sudo mv Downloads/<package name> ~/.icons
-cd .icons
-tar -xvf <package name>
-gtk-update-icon-cache /home/<user>/.icons/<package name>
-sudo rm <package name>
-```
+[Theme](https://www.gnome-look.org/p/1256209)
 
 ### Windows theme
-Go to this [site](https://www.gnome-look.org/p/1253385/) and download the theme called **Sweet-Dark.tar.xz**. Then run the commands:
-```bash
-sudo mv Downloads/<package name> ~/.themes
-cd .themes
-tar -xvf <package name>
-sudo rm <package name .tar>
-```
+[Theme](https://www.gnome-look.org/p/1619506/)
+
+### Cursor
+[Theme](https://www.gnome-look.org/p/1411743/)
+
+Unzip themes with `tar -xvf <>`, the move to themes folder.
 
 ### Font
 [Download font](https://www.dafontfree.io/download/san-francisco-text/?wpdmdl=64309&refresh=62615668b4aad1650546280&ind=1601919915418&filename=1601919916wpdm_San-Francisco.zip)
 ```bash
 unzip San-Francisco.zip
-cd San Francisco/SFUIDisplay/
+cd San Francisco/SFUIText/
 sudo mv * /usr/share/fonts
-```
-
-### Cursor
-Go to this [site](https://www.xfce-look.org/p/1356095) and download the theme called **volantes_cursors.targz**. Then run the commands:
-```bash
-sudo mv Downloads/<package name> ~/.icons
-cd .icons
-tar -xvf <package name>
-sudo rm <package name .tar>
 ```
 ***
 
@@ -378,6 +359,13 @@ git clone https://github.com/NayamAmarshe/ulauncher-zorinBlueDark/ \
 # Then select the theme into config panel.
 ```
 ***
+
+## EXA
+[Guide](https://the.exa.website/install/source)
+```bash
+git clone https://github.com/ogham/exa.git
+cargo build --release
+```
 
 ## Shortcuts
 - Super + M | alacritty --command htop
