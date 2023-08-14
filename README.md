@@ -29,7 +29,7 @@ sudo apt update && sudo apt upgrade -y
 ## Install Web Browser
 For chrome installation we need to go to [chrome official web site](https://www.google.com/intl/es-419/chrome/), then download the .deb. Open a terminal in the download directory and run.
 ```bash
-sudo dpkg -i <package>
+sudo apt install -y ./<package>
 ```
 ***
 
@@ -138,45 +138,6 @@ File configuration: [**zsh.rc**](https://github.com/ErickAvilaB/linux-setup/blob
 ## Alacritty terminal
 ### Installation
 [Guide](https://github.com/alacritty/alacritty/blob/master/INSTALL.md#prerequisites)
-```bash
-# Clone the source code
-cd
-git clone https://github.com/alacritty/alacritty.git
-
-# Install rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-# Set Rust compiler
-rustup override set stable
-rustup update stable
-
-# Install dependencies
-sudo apt install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
-
-# Compile the project
-cd alacritty
-cargo build --release
-
-# Termninfo
-sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
-infocmp alacritty
-
-# Create desktop shortcuts
-sudo cp target/release/alacritty /usr/local/bin # or anywhere else in $PATH
-sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
-sudo desktop-file-install extra/linux/Alacritty.desktop
-sudo update-desktop-database
-
-# Install manual
-sudo mkdir -p /usr/local/share/man/man1
-gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
-gzip -c extra/alacritty-msg.man | sudo tee /usr/local/share/man/man1/alacritty-msg.1.gz > /dev/null
-
-# Create config file
-cd
-mkdir .config/alacritty
-touch .config/alacritty/alacritty.yml
-```
 
 ### Configuration
 Configuration file: [**alacritty.yml**](https://github.com/ErickAvilaB/linux-setup/blob/master/assets/config-files/alacritty.yml)
@@ -200,7 +161,7 @@ sudo mv * /usr/share/fonts/
 [Guide](https://github.com/neovim/neovim/wiki/Installing-Neovim#snap)  
 ```bash
 # Install from snap
-sudo snap install nvim --classic
+sudo apt-get install neovim
 ```
 
 ### Install vim plug
@@ -215,11 +176,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 #### Python
 [Guide](https://github.com/neovim/pynvim)  
 ```bash
-# Install pip
-sudo apt-get install -y python3-pip
-
 # Install pynvim
-pip3 install --upgrade pynvim
+sudo apt-get install python3-neovim
 ```
 
 #### Node
@@ -236,12 +194,6 @@ nvm install --lts
 
 # Install node neovim
 npm install -g neovim
-```
-
-### Clipboard
-```bash
-# Install xclip
-sudo apt-get install -y xclip
 ```
 
 ### Configuration
@@ -276,12 +228,7 @@ Then open plugins.vim and run:
 
 - PEP8
 ```bash
-pip install --upgrade autopep8
-```
-
-- Pylint
-```bash
-pip install --upgrade pylint
+sudo apt-get install python3-autopep8
 ```
 
 - Prettier
@@ -367,7 +314,9 @@ git clone https://github.com/NayamAmarshe/ulauncher-zorinBlueDark/ \
 [Guide](https://the.exa.website/install/source)
 ```bash
 git clone https://github.com/ogham/exa.git
+cd exa
 cargo build --release
+sudo cp target/release/exa /usr/local/bin
 ```
 ***
 
@@ -378,7 +327,7 @@ cargo build --release
 ## Some extra things
 ```bash
 # Install venv
-pip install --upgrade virtualenv
+sudo apt install python3-venv
 
 # Install neofetch
 sudo apt install -y neofetch
