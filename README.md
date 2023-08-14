@@ -3,7 +3,7 @@ Author: Erick Avila | @ErickAvilaB
 ***
 
 ## Distribution
-Xubuntu is an Ubuntu flavour which uses xfce as graphic environment. Download the **Supported LTS release: 22.04** ISO from the [official page](https://xubuntu.org/release/22-04/).
+I use Debian 12. [Download](https://www.debian.org/index.es.html)
 ***
 
 ## Hour
@@ -76,6 +76,9 @@ cd .ssh
 ssh-keygen -t ed25519 -C "your_email@example.com"
 
 # Add public key to GitHub (file ends .pub)
+
+# Add ssh key to device
+ssh-add ~/.ssh/<key>
 ```
 ***
 
