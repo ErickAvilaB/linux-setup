@@ -155,7 +155,9 @@ fc-cache
 ## Neovim
 
 ### Installation
-<!-- TODO: update installation -->
+
+It always changes so check out [Installation page](https://github.com/neovim/neovim/blob/master/INSTALL.md)
+
 ```bash
 # Install from snap
 sudo apt-get install neovim
@@ -201,15 +203,13 @@ npm install -g neovim
 ```
 
 ### Configuration
-<!-- TODO: update configuration -->
 Clone my config repo and set up nvim:
 
 ```bash
 cd
 cd .config/
-git clone git@github.com:ErickAvilaB/nvim.git
-cd nvim
-mkdir plugged
+git clone git@github.com:ErickAvilaB/neovim-config.git
+# change the dir name to nvim
 ```
 
 
@@ -246,7 +246,9 @@ sudo apt install -y exa
 
 
 ## Shortcuts
-<!-- TODO: add shortcuts -->
+
+![Shortcuts](./assets/img/shortcuts.png)
+
 
 ## Some extra things
 ```bash
@@ -265,8 +267,8 @@ sudo apt install -y bat
 
 
 ## Final look
-<!-- TODO: update final look -->
-![Desktop](https://github.com/ErickAvilaB/linux-setup/blob/master/assets/img/Screenshot_2023-04-28_13-27-36.png)
+
+![Desktop](./assets/img/desktop.png)
 
 
 (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
